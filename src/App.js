@@ -5,16 +5,20 @@ import './App.css';
 function App() {
 
 
-const [name, setName] = useState("");
+const [fName, setFname] = useState("");
+const [lName, setLname] = useState("");
 const [text, setText]= useState("");
 const [mouseOver, setMouseOver] = useState(false);
 
 function handleClick(){
-setText(name);
+setText(fName+lName);
 }
 
-function handleChange(event){
-  setName(event.target.value);
+function handleChangeFirst(event){
+  setFname(event.target.value);
+}
+function handleChangeLast(event){
+  setLname(event.target.value);
 }
 
 function handleMouseOver(){
@@ -25,15 +29,21 @@ function handleMouseOut(){
 }
   return (
     <div class="container">
-      <h1>Hello {text}</h1>
-      <input class="textbox" onChange={handleChange} type="text" placeholder="what's your text" 
-      value={name}
+    <div class="inner">
+      <h1 class="text">Hello {text}</h1>
+      
+      <input class="textbox" onChange={handleChangeFirst} type="text" placeholder="First Name" 
+      value={fName}
       ></input>
-      <button class="btn" style={{ color:"#006600", backgroundColor:mouseOver ? "black" : "white"}}
+      <input class="textbox" onChange={handleChangeLast} type="text" placeholder="Last Name" 
+      value={lName}
+      ></input>
+      <button class="btn" style={{ color:"##000033", backgroundColor:mouseOver ? "#004d00" : "white"}}
       onClick={handleClick}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       >Submit</button>
+    </div>
     </div>
   );
 }

@@ -17,4 +17,11 @@ font-size: 20px;
 .btn{
 padding: 20px;
 font-size: 20px;
+border-radius: 50%;
+}
+.inner{
+  padding: 10% 25%;
+}
+.text{
+  text-align: center;
 }
